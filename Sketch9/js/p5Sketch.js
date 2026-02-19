@@ -7,11 +7,11 @@ let noInput = 5000;
 function preload(){
   //img = loadImage("/Sketch8/img/image1.jpeg");
 
-  images[0] = loadImage("/Sketch9/img/image1.jpeg");
-  images[1] = loadImage("/Sketch9/img/image2.jpeg");
-  images[2] = loadImage("/Sketch9/img/image3.jpeg");
-  images[3] = loadImage("/Sketch9/img/image4.jpeg");
-  images[4] = loadImage("/Sketch9/img/image5.jpeg");
+  images[0] = loadImage("../img/image1.jpeg");
+  images[1] = loadImage("../img/image2.jpeg");
+  images[2] = loadImage("../img/image3.jpeg");
+  images[3] = loadImage("../img/image4.jpeg");
+  images[4] = loadImage("../img/image5.jpeg");
 
 }
 
