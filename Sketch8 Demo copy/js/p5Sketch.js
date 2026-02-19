@@ -5,11 +5,11 @@ let currentIndex = 0;
 function preload(){
   //img = loadImage("/Sketch8/img/image1.jpeg");
 
-  images[0] = loadImage("/Sketch8 Demo/img/image1.jpeg");
-  images[1] = loadImage("/Sketch8 Demo/img/image2.jpeg");
-  images[2] = loadImage("/Sketch8 Demo/img/image3.jpeg");
-  images[3] = loadImage("/Sketch8 Demo/img/image4.jpeg");
-  images[4] = loadImage("/Sketch8 Demo/img/image5.jpeg");
+  images[0] = loadImage("img/image1.jpeg");
+  images[1] = loadImage("img/image2.jpeg");
+  images[2] = loadImage("img/image3.jpeg");
+  images[3] = loadImage("img/image4.jpeg");
+  images[4] = loadImage("img/image5.jpeg");
 
 }
 
