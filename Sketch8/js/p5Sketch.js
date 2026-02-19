@@ -5,11 +5,11 @@ let currentIndex = 0;
 function preload(){
   //img = loadImage("/Sketch/img/image1.jpeg");
 
-  images[0] = loadImage("/Sketch8/img/buster1.jpg");
-  images[1] = loadImage("/Sketch8/img/buster2.jpg");
-  images[2] = loadImage("/Sketch8/img/dave1.jpg");
-  images[3] = loadImage("/Sketch8/img/daveandbuster.jpg");
-  images[4] = loadImage("/Sketch8/img/buster3.jpg");
+  images[0] = loadImage("img/buster1.jpg");
+  images[1] = loadImage("img/buster2.jpg");
+  images[2] = loadImage("img/dave1.jpg");
+  images[3] = loadImage("img/daveandbuster.jpg");
+  images[4] = loadImage("img/buster3.jpg");
 
 }
 
