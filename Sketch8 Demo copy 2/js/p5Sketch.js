@@ -23,9 +23,14 @@ function draw(){
   fill(255);
 
   text(currentWord, width/2, height/2)
+
+  console.log(words);
 }
 
 function keyPressed(){
   currentWord=words[floor(random(words.length))];
   
+}
+function windowResized(){
+  resizeCanvas(windowWidth, windowHeight);
 }
