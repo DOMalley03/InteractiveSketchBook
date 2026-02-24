@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> Micro Project 1 </title>
+
+    <!-- p5 core always in the head of html -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+</head>
+
+    
+<body>
+ <h1>Febuary 23rd</h1>
+    <h3>Concept Summary</h3>
+        <p>I want to create a cookie-clicker like game where the user clicks a button on screen. When the button is pressed a currency counter goes up. This money from clicking can be used to purchase an upgrade that makes getting more currency easier.</p>
+
+    <h3>Variables and Input</h3>
+        <p> let points = 0; Points would be the main currency of the game and clicking the button adds one point. This changes behavior by enticing the user to get a higher score. Buying the upgrades would also make a multiplier go up which can be: let mult = 1
+        </p>
+    <h3>Base Build</h3>
+        <p>let points = 0; 
+            let mult = 1; 
+            when function mousePressed is used, let points += mult;
+            This should add the multiplier on each click so that clicking now gives the multiplier amount
+
+
+            if upgrade is bought, spend 25 points and mult++. This should add one to the multiplier making clicking easier
+            
+        </p>
+    <h3>Structural Growth</h3>
+        <p> Some ideas that I have to grow this project would be possibly adding an 'auto-clicker' upgrade that would automatically give points every second. This could run on a timer variable. Another idea would be to add a decay factor that takes away points every second. It would be nice to also add a possible animation to the click to make it more alive.</p>
+
+        <script src="js/p5Sketch.js"></script>
+
+</body>
+
+</html>
