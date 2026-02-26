@@ -1,11 +1,15 @@
 let points=0;
 let mult = 1;
 let upgradeCost= 20;
+
+function preload(){
+
+}
 function setup(){
     createCanvas(600, 400);
    
-    
 }
+
 function draw() {
  background(100);
 
@@ -43,6 +47,8 @@ function mousePressed(){
 
     if (d<125){
         points += mult;
+        //add sound?
+        
     }
 
     //if mouse clicks on upgrade
