@@ -2,6 +2,9 @@ let points=0;
 let mult = 1;
 let upgradeCost= 20;
 
+//combo variables
+let comboTimer = 0;
+
 function preload(){
 
 }
@@ -39,6 +42,18 @@ function draw() {
     textSize(18);
     text('Upgrade Cost: ' + upgradeCost, 485, 330);
 
+    //combo timer
+    if (mult >= 3){
+        comboTimer -= deltaTime /1000;
+        fill('yellow');
+        textAlign(LEFT, TOP);
+        text('Timer: ' + comboTimer.toFixed(1), 10, 50);
+        
+        if (comboTimer <= 0){
+            mult = 1;
+            points = max(0, points - 10);
+        }
+    }
 }
 
 function mousePressed(){
@@ -47,6 +62,11 @@ function mousePressed(){
 
     if (d<125){
         points += mult;
+
+        //resets countdown on combo
+        if (mult >= 3){
+            comboTimer = 5;
+        }
         //add sound?
         
     }
@@ -57,6 +77,11 @@ function mousePressed(){
                 points -= upgradeCost;
                 mult++;
                 upgradeCost = floor(upgradeCost * 1.5);
+
+                //starts timer
+                if (mult >= 3){
+                    comboTimer = 5;
+                }
             }
 
         }
