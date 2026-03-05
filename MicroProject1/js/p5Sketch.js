@@ -1,3 +1,4 @@
+let shapeSize = 250;
 let points=0;
 let mult = 1;
 let upgradeCost= 20;
@@ -10,16 +11,22 @@ function preload(){
 }
 function setup(){
     //createCanvas(windowWidth, windowHeight);
-    createCanvas(600, 400)
+    createCanvas(600, 400);
    
 }
 
 function draw() {
  background(100);
 
+    if (mouseIsPressed) {
+    shapeSize = 225; 
+  } else {
+    shapeSize = 250; 
+  }
+
     //Circle
     fill('red');
-    circle(width / 2, height / 2, 250);
+    circle(width / 2, height / 2, shapeSize);
 
     //Press Me
     fill('white');
