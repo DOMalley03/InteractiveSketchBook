@@ -9,8 +9,8 @@ function preload(){
 
 }
 function setup(){
-    createCanvas(windowWidth, windowHeight);
-    rectMode(CENTER);
+    //createCanvas(windowWidth, windowHeight);
+    createCanvas(600, 400)
    
 }
 
@@ -89,6 +89,6 @@ function mousePressed(){
 
 }
 
-function windowResized(){
-  resizeCanvas(windowWidth, windowHeight);
-}
+//function windowResized(){
+  //resizeCanvas(windowWidth, windowHeight);
+//}
