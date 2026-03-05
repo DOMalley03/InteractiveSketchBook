@@ -1,7 +1,7 @@
 let shapeSize = 250;
 let points=0;
 let mult = 1;
-let upgradeCost= 20;
+let upgradeCost= 10;
 
 //combo variables
 let comboTimer = 0;
