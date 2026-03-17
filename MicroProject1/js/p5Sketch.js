@@ -2,6 +2,7 @@ let shapeSize = 250;
 let points=0;
 let mult = 1;
 let upgradeCost= 10;
+let circleX, circleY;
 
 //combo variables
 let comboTimer = 0;
@@ -10,29 +11,37 @@ function preload(){
 
 }
 function setup(){
-    //createCanvas(windowWidth, windowHeight);
-    createCanvas(600, 400);
-   
+    let canvasHeight = min(windowHeight, 750);
+    createCanvas(windowWidth, canvasHeight);
+
+    //center circle
+    circleX = width/2;
+    circleY = height/2;
+}
+
+function windowResized(){
+    let canvasHeight = min(windowHeight, 750);
+  resizeCanvas(windowWidth, canvasHeight);
 }
 
 function draw() {
- background(100);
+ background(50);
 
     if (mouseIsPressed) {
-    shapeSize = 225; 
+    shapeSize = 225;     
   } else {
     shapeSize = 250; 
   }
 
     //Circle
     fill('red');
-    circle(width / 2, height / 2, shapeSize);
+    circle(circleX, circleY, shapeSize);
 
     //Press Me
     fill('white');
     textSize(32);
     textAlign(CENTER, CENTER);
-    text('Press Me', 300, 200);
+    text('Press Me', circleX, circleY);
 
     //Score
     fill('white');
@@ -43,12 +52,14 @@ function draw() {
 
     //upgrade
     fill(50, 200, 50);
-    rect(400, 300, 170, 60, 10);
+    let upgradeX = width -200;
+    let upgradeY = height -80;
+    rect(upgradeX, upgradeY, 170, 60, 10);
 
     fill('white');
     textAlign(CENTER,CENTER);
     textSize(18);
-    text('Upgrade Cost: ' + upgradeCost, 485, 330);
+    text('Upgrade Cost: ' + upgradeCost, upgradeX + 85, upgradeY + 30);
 
     //combo timer
     if (mult >= 3){
@@ -66,21 +77,30 @@ function draw() {
 
 function mousePressed(){
     //distance between mouse and center of circle
-    let d= dist(mouseX, mouseY, width/2, height/2);
+    let d= dist(mouseX, mouseY, circleX, circleY);
 
-    if (d<125){
+    if (d < shapeSize/2){
         points += mult;
 
         //resets countdown on combo
         if (mult >= 3){
             comboTimer = 5;
         }
-        //add sound?
+        // move circle to a random spot after 5
+        if (mult >= 5) {
+        circleX = random(shapeSize / 2, width - shapeSize / 2);
+        circleY = random(shapeSize / 2, height - shapeSize / 2);
+        }
         
+        //add sound?
     }
 
     //if mouse clicks on upgrade
-    if(mouseX > 400 && mouseX <570 && mouseY >300 && mouseY <360) {
+    let upgradeX = width -200;
+    let upgradeY = height -80;
+
+    if(mouseX > upgradeX && mouseX < upgradeX + 170 
+        && mouseY > upgradeY && mouseY < upgradeY + 60) {
             if (points >= upgradeCost){
                 points -= upgradeCost;
                 mult++;
@@ -95,7 +115,3 @@ function mousePressed(){
         }
 
 }
-
-//function windowResized(){
-  //resizeCanvas(windowWidth, windowHeight);
-//}
