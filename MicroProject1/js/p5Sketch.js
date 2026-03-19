@@ -1,4 +1,5 @@
 let shapeSize = 250;
+let pressedSize = 225;
 let points=0;
 let mult = 1;
 let upgradeCost= 10;
@@ -27,12 +28,6 @@ function windowResized(){
 function draw() {
  background(50);
 
-    if (mouseIsPressed) {
-    shapeSize = 225;     
-  } else {
-    shapeSize = 250; 
-  }
-
     //Circle
     fill('red');
     circle(circleX, circleY, shapeSize);
@@ -42,6 +37,11 @@ function draw() {
     textSize(32);
     textAlign(CENTER, CENTER);
     text('Press Me', circleX, circleY);
+
+    if (mouseIsPressed) { 
+        shapeSize = 225; 
+    } else { 
+        shapeSize = 250; }
 
     //Score
     fill('white');
