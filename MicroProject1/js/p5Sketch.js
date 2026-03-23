@@ -1,9 +1,16 @@
+let gameStart = false;
+let gameOver = false;
+//timer
+let timeLeft = 60;
+//button & button pressed sizes
 let shapeSize = 250;
 let pressedSize = 225;
+let circleX, circleY;
+
 let points=0;
 let mult = 1;
 let upgradeCost= 10;
-let circleX, circleY;
+
 
 //combo variables
 let comboTimer = 0;
@@ -27,6 +34,46 @@ function windowResized(){
 
 function draw() {
  background(50);
+
+    //start screen
+ if(!gameStart){
+    fill('white');
+    textAlign(CENTER, CENTER);
+    textSize(48);
+    text("SPACE to Start", width/2, height/2);
+    text("One minute to win it!", width/2, height/2 +50);
+    //prevent draw before click
+    return;
+ }
+    // game finished
+    if (gameOver) {
+        fill('white');
+        textAlign(CENTER, CENTER);
+        textSize(48);
+        text("Pencils Down!", width/2, height/2 - 40);
+
+        textSize(28);
+        text("Final Score: " + points, width/2, height/2 + 20);
+
+        textSize(18);
+        text("SPACE to Restart", width/2, height/2 + 70);
+        return;
+    }
+
+    //game timer
+    timeLeft -= deltaTime / 1000;
+
+    if (timeLeft <= 0) {
+        timeLeft = 0;
+        gameOver = true;
+    }
+
+    // display timer
+    fill('white');
+    textSize(18);
+    textAlign(LEFT, TOP);
+    //took a minute to figure this out but displays time left
+    text("Time: " + timeLeft.toFixed(1), 10, 70);
 
     //Circle
     fill('red');
@@ -74,6 +121,27 @@ function draw() {
         }
     }
 }
+function keyPressed(){
+    //start game
+    if (key === ' ' && !gameStart){
+        gameStart = true;
+        return;
+    }
+
+     //restart game & reset values
+    if (key === ' ' && gameOver){
+        gameOver = false;
+        gameStart = false;
+        points = 0;
+        mult = 1;
+        upgradeCost = 10;
+        timeLeft = 60;
+        circleX = width/2;
+        circleY = height/2;
+        return; 
+    }
+}
+    
 
 function mousePressed(){
     //distance between mouse and center of circle
