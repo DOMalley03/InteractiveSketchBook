@@ -83,11 +83,11 @@ function mousePressed(){
         points += mult;
 
         //resets countdown on combo
-        if (mult >= 3){
-            comboTimer = 5;
+        if (mult >= 2){
+            comboTimer = 3;
         }
         // move circle to a random spot after 5
-        if (mult >= 5) {
+        if (mult >= 3) {
         circleX = random(shapeSize / 2, width - shapeSize / 2);
         circleY = random(shapeSize / 2, height - shapeSize / 2);
         }
