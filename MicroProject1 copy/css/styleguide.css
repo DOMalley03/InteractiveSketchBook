@@ -1,0 +1,26 @@
+:root {
+  --h1-header-font-family: "Inter", Helvetica;
+  --h1-header-font-weight: 700;
+  --h1-header-font-size: 48px;
+  --h1-header-letter-spacing: 0px;
+  --h1-header-line-height: normal;
+  --h1-header-font-style: normal;
+  --h2-header-font-family: "Inter", Helvetica;
+  --h2-header-font-weight: 600;
+  --h2-header-font-size: 40px;
+  --h2-header-letter-spacing: 0px;
+  --h2-header-line-height: normal;
+  --h2-header-font-style: normal;
+  --h3-sub-head-font-family: "Inter", Helvetica;
+  --h3-sub-head-font-weight: 400;
+  --h3-sub-head-font-size: 32px;
+  --h3-sub-head-letter-spacing: 0px;
+  --h3-sub-head-line-height: normal;
+  --h3-sub-head-font-style: normal;
+  --body-text-font-family: "Inter", Helvetica;
+  --body-text-font-weight: 400;
+  --body-text-font-size: 24px;
+  --body-text-letter-spacing: 0px;
+  --body-text-line-height: normal;
+  --body-text-font-style: normal;
+}
